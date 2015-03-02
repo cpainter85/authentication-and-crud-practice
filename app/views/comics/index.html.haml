@@ -1,0 +1,13 @@
+%h1 Comics
+-if current_user
+  ='The current user is: ' + current_user.email
+  =link_to 'Sign Out', sign_out_path
+-else
+  =link_to 'Sign Up', sign_up_path
+  =link_to 'Sign In', sign_in_path
+=link_to 'Add Comic', new_comic_path
+-@comics.each do |comic|
+  %p
+    =link_to comic.title, comic_path(comic)
+    =comic.issue_number
+  %hr

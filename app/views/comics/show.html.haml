@@ -1,0 +1,10 @@
+%p
+  %strong Title:
+  =@comic.title
+%p
+  %strong Issue Number:
+  =@comic.issue_number
+%p
+  =link_to 'Back', comics_path
+  =link_to 'Edit', edit_comic_path(@comic)
+  =link_to 'Delete', comic_path(@comic), method: :delete, data: {confirm: 'Are you sure?'}
